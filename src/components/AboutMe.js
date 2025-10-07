@@ -1,0 +1,57 @@
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+export const AboutMe = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+  return (
+    <section className="about" id="aboutMe">
+      <div className="spotlight-container" data-aos="fade-up">
+        <span className="spotlight-heading">About Me</span>
+      </div>
+
+      <div className="about-text-container">
+        <div>
+          <p data-aos="fade-up">
+            {" "}
+            Hi! I'm Yousuf Buhari, an Android developer with 2 years of
+            experience building apps that people love to use. I specialize in
+            creating smooth, intuitive, and user-friendly mobile experiences.{" "}
+          </p>
+          <p data-aos="fade-up">
+            {" "}
+            Since starting my Android development journey in 2024, I have
+            enjoyed turning ideas into real, functional apps from scratch. I’m
+            passionate about writing clean code, exploring new technologies, and
+            continuously improving my skills to create apps that make a
+            difference.{" "}
+          </p>
+          <p data-aos="fade-up">
+            {" "}
+            When I'm not coding, I enjoy learning about the latest trends in
+            mobile development and experimenting with new app concepts.{" "}
+          </p>
+        </div>
+
+        <div className="resume-btn-wrapper" data-aos="fade-up">
+          <button
+            className="resume-btn"
+            id="resume-btn"
+            onClick={() => console.log("Resume")}
+          >
+            <div className="sign">
+              <svg viewBox="0 0 640 512">
+                <path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-167l80 80c9.4 9.4 24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-39 39V184c0-13.3-10.7-24-24-24s-24 10.7-24 24V318.1l-39-39c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9z" />
+              </svg>
+            </div>
+            <div className="text">Resume</div>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
