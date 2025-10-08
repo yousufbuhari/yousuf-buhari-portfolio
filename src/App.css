@@ -91,8 +91,8 @@ html {
 
 @media (max-width: 480px) {
   .loader-dots div {
-    width: 12px;
-    height: 12px;
+    width: 16x;
+    height: 16px;
   }
   .loader-dots {
     gap: 8px;
@@ -455,7 +455,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
     height: 75px;
     margin: 0;
     border-radius: 40px;
-    width: calc(100% - 80px);
+    width: calc(100% - 50px);
     left: 50%;
     transform: translateX(-50%);
   }
@@ -480,10 +480,10 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
     margin: 0;
   }
   nav.navbar .navbar-nav .nav-link.navbar-link {
-    padding: 15px 20px;
+    padding: 8px 12px;
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
     display: block;
     text-align: center;
@@ -503,21 +503,22 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   position: relative;
   overflow: hidden;
   max-width: calc(100% - 250px);
-  padding: 150px 0 60px 0;
+  padding: 150px 20px 80px 20px;
   margin: 0 auto;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 }
 
 .banner h1 {
-  font-size: 65px;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   margin-bottom: 20px;
   display: block;
+  line-height: 1.2;
 }
 
 #name {
-  font-size: 6rem;
+  font-size: clamp(3.5rem, 12vw, 6rem);
   font-weight: 700;
   width: fit-content;
   display: flex;
@@ -537,6 +538,15 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   background-size: 400% 400%;
   -webkit-animation: gradient 3s ease infinite;
   animation: gradient 3s ease infinite;
+  line-height: 1.1;
+}
+
+.banner-heading {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 500;
+  color: #a0a0a0;
+  margin-top: 10px;
+  line-height: 1.4;
 }
 
 @-webkit-keyframes gradient {
@@ -566,38 +576,46 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 /* Mobile Responsive Banner */
 @media (max-width: 992px) {
   .banner {
-    max-width: calc(100% - 150px);
-    padding: 180px 0 80px 0;
+    max-width: calc(100% - 100px);
+    padding: 150px 70px 50px 70px;
   }
 }
 
 @media (max-width: 768px) {
   .banner {
-    padding: 180px 0 60px 0;
+    padding: 180px 10px 0 10px;
   }
   .banner h1 {
-    font-size: 38px;
+    font-size: clamp(2rem, 6vw, 2.5rem);
   }
   #name {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
     display: inline-block;
+  }
+  .banner-heading {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
   }
 }
 
 @media (max-width: 480px) {
   .banner {
-    max-width: calc(100% - 80px);
-    padding: 180px 0 50px 0;
+    padding: 150px 0 0 0;
     text-align: left;
   }
   .banner h1 {
-    font-size: 30px;
+    font-size: clamp(2rem, 5vw, 2rem);
     text-align: left;
+    line-height: 1.3;
   }
   #name {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 8vw, 2.5rem);
     display: inline-block;
     white-space: nowrap;
+    text-align: left;
+    line-height: 1.2;
+  }
+  .banner-heading {
+    font-size: clamp(1rem, 3vw, 1.5rem);
     text-align: left;
   }
 }
@@ -607,32 +625,48 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   position: relative;
   margin: 0 auto;
   max-width: calc(100% - 250px);
+  /* padding: 60px 0; */
+  /* background: rgba(255, 255, 255, 0.01); */
+  /* border-radius: 20px; */
+  /* border: 1px solid rgba(255, 255, 255, 0.05); */
+  /* backdrop-filter: blur(5px); */
+  /* -webkit-backdrop-filter: blur(5px); */
 }
 
-.about-content {
-  margin-top: 30px;
-}
+/* .about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(107, 197, 248, 0.3), rgba(207, 89, 230, 0.3), transparent);
+} */
 
 .about p {
   color: #fff;
   font-size: 20px;
   font-weight: 420;
   text-align: left;
+  line-height: 1.7;
+  position: relative;
+}
+
+.about p:hover {
+  color: #f0f0f0;
+  transform: translateX(8px);
+}
+
+.about p strong {
+  background: linear-gradient(90deg, #6bc5f8, #cf59e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
 }
 
 .about p:last-child {
   margin-bottom: 0;
-}
-
-.about img {
-  width: 90%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
-
-.about .img-wrapper {
-  transition: transform 0.5s ease;
-  flex-shrink: 0;
 }
 
 .about-text-container {
@@ -640,6 +674,8 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  position: relative;
+  padding: 40px;
 }
 
 .resume-btn {
@@ -656,6 +692,12 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   align-items: center;
   transition: all 0.3s ease;
   display: flex;
+  cursor: pointer;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .resume-btn:hover {
@@ -704,50 +746,47 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 /* Mobile Responsive About Me */
 @media (max-width: 992px) {
   .about {
-    max-width: calc(100% - 150px);
+    max-width: calc(100% - 110px);
+    padding: 50px 0;
   }
-  .about .img-wrapper {
-    transform: translateY(0);
-    flex-shrink: 1;
-    margin-top: 30px;
+  .about-text-container {
+    /* padding: 30px; */
   }
-  .about img {
-    width: 65%;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 0;
+  }
+  .about-text-container {
+    padding: 25px;
+  }
+  .about p {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
   .about {
-    max-width: calc(100% - 100px);
+    max-width: calc(100% - 50px);
+    padding: 30px 0;
+  }
+  .about-text-container {
+    padding: 20px;
   }
   .about p {
     color: #fff;
     font-size: 18px;
     text-align: left;
   }
-  .resume-btn {
-    overflow: visible;
-    width: auto;
-    height: auto;
-    border-radius: 40px;
-    padding: 10px 20px;
-    justify-content: center;
-  }
-  .resume-btn .sign {
-    width: auto;
-    padding-left: 0;
-    padding-right: 8px;
-  }
-  .resume-btn .text {
-    opacity: 1;
-    width: auto;
-    padding-right: 8px;
+  .about p:hover {
+    transform: translateX(4px);
   }
 }
 
 /* *********** Skills Css *********** */
 .skill .container {
-  max-width: calc(100% - 120px);
+  max-width: calc(100% - 250px);
   padding: 0;
 }
 
@@ -856,6 +895,9 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 }
 
 @media (max-width: 468px) {
+  .skill .container {
+    max-width: calc(100% - 30px);
+  }
   .skill-box-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -882,6 +924,10 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   }
 }
 /************ Projects Css ************/
+.project {
+  padding-top: 50px;
+}
+
 .project-wrapper {
   max-width: calc(100% - 250px);
   margin: 0 auto;
@@ -915,7 +961,16 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   pointer-events: none;
 }
 
-.project-logo {
+.project-logo1 {
+  width: 100px;
+  height: 80px;
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+
+.project-logo2 {
+  width: 85px;
+  height: 100px;
   margin: 0;
   padding: 0 0 20px 0;
 }
@@ -948,17 +1003,75 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 .project-meta {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 15px 0;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-meta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(107, 197, 248, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.project-meta:hover::before {
+  left: 100%;
+}
+
+.project-meta:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(107, 197, 248, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(107, 197, 248, 0.1);
 }
 
 .meta-item {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   font-size: 0.9rem;
   color: #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.meta-item:hover {
+  background: rgba(107, 197, 248, 0.08);
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(107, 197, 248, 0.1);
+}
+
+.meta-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: linear-gradient(180deg, #6bc5f8, #cf59e6);
+  border-radius: 2px;
+  transition: height 0.3s ease;
+}
+
+.meta-item:hover::before {
+  height: 60%;
 }
 
 .meta-label {
@@ -966,23 +1079,51 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   min-width: 140px;
   font-size: 16px;
   display: inline-size;
-  background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.3));
+  background: linear-gradient(90deg, #6bc5f8, #cf59e6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.meta-label::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6bc5f8, #cf59e6);
+  transition: width 0.3s ease;
+}
+
+.meta-item:hover .meta-label::after {
+  width: 100%;
 }
 
 .meta-value {
   font-weight: 500;
   font-size: 16px;
   color: #f5f5f5;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.meta-item:hover .meta-value {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(107, 197, 248, 0.3);
+}
+
+.meta-item:active {
+  transform: scale(0.98);
 }
 
 .view-btn {
   overflow: hidden;
   margin-top: 20px;
   justify-content: flex-start;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border: none;
   border-radius: 50%;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
@@ -991,6 +1132,13 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   align-items: center;
   transition: all 0.3s ease;
   display: flex;
+  cursor: pointer;
+
+}
+
+.view-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .view-btn:hover {
@@ -1064,16 +1212,18 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   .meta-item {
     flex-direction: column;
     gap: 4px;
+    padding: 6px 10px;
+  }
+  .meta-item:hover {
+    transform: translateX(3px);
   }
   .meta-label {
     min-width: auto;
-  }
-  .meta-label {
     font-weight: 600;
     min-width: 90px;
     font-size: 16px;
     display: inline-size;
-    background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.3));
+    background: linear-gradient(90deg, #6bc5f8, #cf59e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -1089,7 +1239,19 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
     overflow: visible;
   }
   .project-wrapper {
-    max-width: calc(100% - 30px);
+    max-width: 100%;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 15px;
+  }
+  .project-content {
+    padding-top: 20px;
   }
   .project-title {
     font-size: 1.2rem;
@@ -1102,7 +1264,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
     min-width: 90px;
     font-size: 16px;
     display: inline-size;
-    background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.3));
+    background: linear-gradient(90deg, #6bc5f8, #cf59e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -1112,28 +1274,17 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
     font-size: 16px;
     color: #f5f5f5;
   }
-  .view-btn {
-    overflow: visible;
-    width: auto;
-    height: auto;
-    border-radius: 40px;
-    padding: 10px 20px;
-    justify-content: center;
+  .project-meta {
+    padding: 15px;
   }
-  .view-btn .sign {
-    width: auto;
-    padding-left: 0;
-    padding-right: 8px;
-  }
-  .view-btn .text {
-    opacity: 1;
-    width: auto;
-    padding-right: 8px;
+  .meta-item {
+    padding: 5px 8px;
   }
 }
+
 /************ Contact Css ************/
 .contact {
-  padding: 0 0 70px 0;
+  padding: 50px 0;
 }
 
 .contact img {
@@ -1148,7 +1299,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   color: #fff;
   margin: 0 0 8px 0;
   padding: 18px 26px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 18px;
   letter-spacing: 0.8px;
   transition: all 0.3s ease-in-out;
@@ -1158,7 +1309,8 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 .contact form textarea:focus {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  box-shadow: 0 0 12px rgba(107, 197, 248, 0.3), 0 0 24px rgba(207, 89, 230, 0.25);
+  box-shadow: 0 0 12px rgba(107, 197, 248, 0.3),
+    0 0 24px rgba(207, 89, 230, 0.25);
   outline: none;
 }
 
@@ -1216,4 +1368,51 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
     padding: 0 40px 70px 40px;
     justify-items: center;
   }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 0 20px 70px 20px;
+    justify-items: center;
+  }
+}
+
+/* ************ Footer Css ************/
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #121212, #444, #121212);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #a0a0a0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.footer-text {
+  background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.footer-divider {
+  color: #fff;
 }

@@ -116,7 +116,7 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yousufbuhari/portfolio.git
+   git clone https://github.com/yousufbuhari/yousuf-buhari-portfolio.git
    cd portfolio
    ```
 
