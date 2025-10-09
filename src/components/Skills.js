@@ -3,7 +3,6 @@ import icJava from "../assets/img/ic-java.png";
 import icAndroid from "../assets/img/ic-android-studio.png";
 import icPostman from "../assets/img/ic-postman.png";
 import icGit from "../assets/img/ic-git.png";
-import icMongoDB from "../assets/img/ic-mongodb.png";
 import icFirebase from "../assets/img/ic-firebase.png";
 import icVsCode from "../assets/img/ic-vscode.png";
 import icXML from "../assets/img/ic-xml.svg";
@@ -69,11 +68,6 @@ export const Skills = () => {
               <li className="skill-box" data-aos="fade-up">
                 <img src={icGit} alt="GIT" />
                 <span className="tooltip">GIT</span>
-              </li>
-
-              <li className="skill-box" data-aos="fade-up">
-                <img src={icMongoDB} alt="MongoDB" />
-                <span className="tooltip">MongoDB</span>
               </li>
 
               <li className="skill-box" data-aos="fade-up">

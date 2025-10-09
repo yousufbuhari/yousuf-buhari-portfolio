@@ -502,7 +502,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 .banner {
   position: relative;
   overflow: hidden;
-  max-width: calc(100% - 250px);
+  max-width: calc(100% - 300px);
   padding: 150px 20px 80px 20px;
   margin: 0 auto;
   backdrop-filter: blur(15px);
@@ -576,13 +576,14 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 /* Mobile Responsive Banner */
 @media (max-width: 992px) {
   .banner {
-    max-width: calc(100% - 100px);
+    max-width: calc(100% - 85px);
     padding: 150px 70px 50px 70px;
   }
 }
 
 @media (max-width: 768px) {
   .banner {
+    max-width: calc(100% - 80px);
     padding: 180px 10px 0 10px;
   }
   .banner h1 {
@@ -599,6 +600,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 
 @media (max-width: 480px) {
   .banner {
+    max-width: calc(100% - 50px);
     padding: 150px 0 0 0;
     text-align: left;
   }
@@ -624,24 +626,18 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 .about {
   position: relative;
   margin: 0 auto;
-  max-width: calc(100% - 250px);
-  /* padding: 60px 0; */
-  /* background: rgba(255, 255, 255, 0.01); */
-  /* border-radius: 20px; */
-  /* border: 1px solid rgba(255, 255, 255, 0.05); */
-  /* backdrop-filter: blur(5px); */
-  /* -webkit-backdrop-filter: blur(5px); */
+  max-width: calc(100% - 300px);
 }
 
-/* .about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(107, 197, 248, 0.3), rgba(207, 89, 230, 0.3), transparent);
-} */
+.about-text-container {
+  padding: 60px 0;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 20px;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
 
 .about p {
   color: #fff;
@@ -680,7 +676,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 
 .resume-btn {
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 30px;
   justify-content: flex-start;
   width: 60px;
   height: 60px;
@@ -824,7 +820,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 }
 
 .skill-box:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 .tooltip {
@@ -964,21 +960,22 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 .project-logo1 {
   width: 100px;
   height: 80px;
-  margin: 0;
   padding: 0 0 20px 0;
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .project-logo2 {
-  width: 85px;
-  height: 100px;
-  margin: 0;
+  width: 63px;
+  height: 80px;
   padding: 0 0 20px 0;
+  transition: transform 0.3s ease;
 }
 
-.project-card {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.project-logo1:hover,
+.project-logo2:hover {
+  transform: scale(1.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-title {
@@ -1005,6 +1002,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   flex-direction: column;
   gap: 12px;
   padding: 20px;
+  margin: 0;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1022,7 +1020,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(107, 197, 248, 0.1), transparent);
+  background: linear-gradient(90deg,transparent, rgba(107, 197, 248, 0.1),transparent);
   transition: left 0.6s ease;
   z-index: 0;
 }
@@ -1035,7 +1033,6 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(107, 197, 248, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(107, 197, 248, 0.1);
 }
 
 .meta-item {
@@ -1052,9 +1049,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 }
 
 .meta-item:hover {
-  background: rgba(107, 197, 248, 0.08);
   transform: translateX(5px);
-  box-shadow: 0 4px 15px rgba(107, 197, 248, 0.1);
 }
 
 .meta-item::before {
@@ -1122,8 +1117,8 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   overflow: hidden;
   margin-top: 20px;
   justify-content: flex-start;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: none;
   border-radius: 50%;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
@@ -1133,7 +1128,6 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   transition: all 0.3s ease;
   display: flex;
   cursor: pointer;
-
 }
 
 .view-btn:hover {
@@ -1212,7 +1206,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   .meta-item {
     flex-direction: column;
     gap: 4px;
-    padding: 6px 10px;
+    padding: 5px;
   }
   .meta-item:hover {
     transform: translateX(3px);
@@ -1278,7 +1272,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
     padding: 15px;
   }
   .meta-item {
-    padding: 5px 8px;
+    padding: 5px;
   }
 }
 
@@ -1342,8 +1336,22 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
   position: relative;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
+  cursor: pointer;
+}
+
+.contact form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(270deg, #4a2fbd, #aa367c);
+  background-size: 400% 400%;
+  animation: gradientMove 1.5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .contact form button span {
@@ -1370,7 +1378,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .contact {
     padding: 0 20px 70px 20px;
     justify-items: center;

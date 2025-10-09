@@ -41,7 +41,7 @@ export const AboutMe = () => {
           <button
             className="resume-btn"
             id="resume-btn"
-            onClick={() => console.log("Resume")}
+            onClick={() => window.open("/yousuf-buhari-resume.pdf", "_blank")}
           >
             <div className="sign">
               <svg viewBox="0 0 640 512">
