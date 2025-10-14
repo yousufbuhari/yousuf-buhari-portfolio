@@ -17,23 +17,25 @@ export const AboutMe = () => {
       <div className="about-text-container">
         <div>
           <p data-aos="fade-up">
-            Hi! I'm <strong>Yousuf Buhari</strong>, an Android developer with 2
-            years of experience building apps that people love to use. I
-            specialize in crafting smooth, intuitive, and user-friendly mobile
-            experiences.
+            Hi! I'm <strong>Yousuf Buhari K M</strong> — an Android developer
+            who loves turning ideas into apps that people actually enjoy using.
           </p>
 
           <p data-aos="fade-up">
-            Since beginning my Android development journey in 2024, I've enjoyed
-            turning ideas into real, functional applications from scratch. I'm
-            passionate about writing clean, maintainable code, exploring new
-            technologies, and continuously improving my skills to create apps
-            that make a difference.
+            Funny enough, I started out with a{" "}
+            <strong>B.E. in Mechanical Engineering</strong>, but somewhere along
+            the way, I got hooked on coding. I took the leap, joined{" "}
+            <strong>QSpiders</strong> for their{" "}
+            <strong>Java Full Stack program</strong>, and that’s where my
+            software journey really kicked off.
           </p>
 
           <p data-aos="fade-up">
-            When I'm not coding, I enjoy learning about the latest trends in
-            mobile development and experimenting with new app concepts.
+            I started my Android journey in 2024, and ever since, I’ve been
+            enjoying the process of learning, experimenting, and turning ideas
+            into apps that are clean, intuitive, and fun to use. I love
+            exploring new tools and techniques to sharpen my skills and create
+            smoother, more engaging experiences for users.
           </p>
         </div>
 
