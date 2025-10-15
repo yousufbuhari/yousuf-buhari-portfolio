@@ -148,7 +148,7 @@ html {
   justify-content: center;
   align-items: center;
   margin-top: 0px;
-  padding: 50px 0;
+  padding: 80px 0;
   width: 100%;
 }
 .spotlight-heading {
@@ -186,10 +186,6 @@ html {
 }
 
 @media (max-width: 992px) {
-  .spotlight-container {
-    padding: 20px 0;
-    margin-top: 40px;
-  }
   .spotlight-heading {
     font-size: 30px;
     letter-spacing: 3px;
@@ -202,10 +198,6 @@ html {
 }
 
 @media (max-width: 480px) {
-  .spotlight-container {
-    padding: 15px 0;
-    margin-bottom: 30px;
-  }
   .spotlight-heading {
     padding: 0 10px;
   }
@@ -274,25 +266,22 @@ html {
 
 /* ********* Navbar Css ********* */
 nav.navbar {
-  background-image: linear-gradient(to bottom right, #1a1a2e, #11111b00);
-  height: 75px;
-  padding: 18px 0;
+  height: 80px;
   position: fixed;
-  top: 15px;
   align-items: center;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
   z-index: 9999;
   transition: 0.32s ease-in-out;
-  border-radius: 60px;
+  width: 100%;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 150px);
+  background-image: linear-gradient(to bottom right, #1a1a2e, #11111b00);
 }
 
 nav.navbar.scrolled {
-  padding: 0px 0;
+  padding: 0;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -301,13 +290,15 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
   letter-spacing: 0.8px;
-  padding: 0 25px;
+  padding: 0 18px;
   font-size: 18px;
   opacity: 0.75;
   position: relative;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
+   margin-left: 0.5rem; /* optional small spacing between links */
+  margin-right: 0.5rem;
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link:hover,
@@ -315,14 +306,18 @@ nav.navbar .navbar-nav .nav-link.navbar-link.active {
   opacity: 1;
 }
 
-nav.navbar .navbar-nav .nav-link.navbar-link.active::before {
+nav.navbar .navbar-nav .nav-link.navbar-link.active::after {
   content: "";
-  width: 8px;
-  height: 8px;
-  background-color: #fff;
-  border-radius: 50%;
-  margin-right: 10px;
-  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  opacity: 1;
 }
 
 nav.navbar .navbar-toggler {
@@ -331,7 +326,6 @@ nav.navbar .navbar-toggler {
   top: 50%;
   transform: translateY(-50%);
   padding: 8px;
-  margin-right: 0;
   background: transparent !important;
   border: none !important;
   -webkit-appearance: none;
@@ -374,15 +368,11 @@ nav.navbar .navbar-toggler-icon:after {
 
 nav.navbar .navbar-toggler.expanded .navbar-toggler-icon:after {
   transform: rotate(45deg);
-  background-color: #fff;
-  height: 2px;
   top: 7px;
 }
 
 nav.navbar .navbar-toggler.expanded .navbar-toggler-icon:before {
   transform: translateY(8px) rotate(-45deg);
-  background-color: #fff;
-  height: 2px;
 }
 
 nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
@@ -400,108 +390,58 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   display: inline-block;
 }
 
-.nav-right {
-  margin-left: auto;
+nav.navbar .navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }
 
-.navbar-link {
-  margin-left: 1rem;
-}
-
-/* Mobile Responsive Navbar */
 @media (max-width: 991.98px) {
-  nav.navbar {
-    height: 75px;
-    margin: 0;
-    border-radius: 40px;
-    width: calc(100% - 150px);
-    left: 50%;
-    transform: translateX(-50%);
-  }
   nav.navbar .navbar-collapse {
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 0px);
     background: rgba(17, 17, 27, 0.9);
     padding: 0;
-    margin-top: 10px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     left: 0;
     min-width: 250px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
   }
   nav.navbar .navbar-nav {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin: 0;
   }
-  nav.navbar .navbar-nav .nav-link.navbar-link {
-    padding: 15px 20px;
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 16px;
-    margin: 0;
-    display: block;
-    text-align: center;
-    white-space: nowrap;
+  nav.navbar .navbar-nav .nav-link.navbar-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    opacity: 1;
   }
-  nav.navbar .navbar-nav .nav-link.navbar-link:last-child {
-    border-bottom: none;
-    border-radius: 0 0 8px 8px;
+  
+  @media (max-width: 480px) {
+    nav.navbar .navbar-nav .nav-link.navbar-link {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
   }
-  nav.navbar .navbar-nav .nav-link.navbar-link:first-child {
-    border-radius: 8px 8px 0 0;
-  }
-}
 
-@media (max-width: 480px) {
-  nav.navbar {
-    height: 75px;
-    margin: 0;
-    border-radius: 40px;
-    width: calc(100% - 50px);
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  nav.navbar .navbar-collapse {
-    position: absolute;
-    top: calc(100% + 10px);
-    background: rgba(17, 17, 27, 0.9);
-    padding: 0;
-    margin-top: 10px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 100%;
-    left: 0;
-    min-width: 250px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-  }
-  nav.navbar .navbar-nav {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-  }
-  nav.navbar .navbar-nav .nav-link.navbar-link {
-    padding: 8px 12px;
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 14px;
-    margin: 0;
-    display: block;
-    text-align: center;
-    white-space: nowrap;
-  }
-  nav.navbar .navbar-nav .nav-link.navbar-link:last-child {
-    border-bottom: none;
-    border-radius: 0 0 8px 8px;
-  }
-  nav.navbar .navbar-nav .nav-link.navbar-link:first-child {
-    border-radius: 8px 8px 0 0;
+  @media (min-width: 481px) and (max-width: 991.98px) {
+    nav.navbar .navbar-nav .nav-link.navbar-link {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
   }
 }
 
@@ -646,12 +586,8 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   justify-content: space-between;
   height: 100%;
   position: relative;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.01);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  padding: 0px 40px;
+  background: transparent;
 }
 
 .about p {
@@ -661,11 +597,6 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   text-align: left;
   line-height: 1.7;
   position: relative;
-}
-
-.about p:hover {
-  color: #f0f0f0;
-  transform: translateX(8px);
 }
 
 .about p strong {
@@ -749,7 +680,6 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 @media (max-width: 992px) {
   .about {
     max-width: calc(100% - 110px);
-    padding: 50px 0;
   }
   .about-text-container {
     padding-top: 30px;
@@ -757,12 +687,6 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 }
 
 @media (max-width: 768px) {
-  .about {
-    padding: 40px 0;
-  }
-  .about-text-container {
-    margin-top: 25px;
-  }
   .about p {
     font-size: 18px;
   }
@@ -770,26 +694,26 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 
 @media (max-width: 480px) {
   .about {
-    max-width: calc(100% - 50px);
-    padding: 30px 0;
+    max-width: calc(100% - 30px);
   }
   .about-text-container {
-    padding: 20px;
+    padding: 5px 20px;
   }
   .about p {
     color: #fff;
     font-size: 18px;
     text-align: left;
   }
-  .about p:hover {
-    transform: translateX(4px);
-  }
 }
 
 /* *********** Skills Css *********** */
 .skill .container {
-  max-width: calc(100% - 250px);
+  max-width: calc(100% - 300px);
   padding: 0;
+}
+
+.skill .spotlight-container {
+  padding: 80px 0px 50px 0px;
 }
 
 .skill-box-wrapper {
@@ -866,7 +790,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 /* Mobile Responsive Skills */
 @media (max-width: 992px) {
   .skill .container {
-    max-width: calc(100% - 70px);
+    max-width: calc(100% - 105px);
   }
   .skill-box-wrapper {
     gap: 20px;
@@ -925,14 +849,10 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   }
 }
 /************ Projects Css ************/
-.project {
-  padding-top: 50px;
-}
-
 .project-wrapper {
-  max-width: calc(100% - 250px);
+  max-width: calc(100% - 300px);
   margin: 0 auto;
-  padding: 30px 30px 0 30px;
+  padding: 0px 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -1191,7 +1111,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 /* Mobile Responsive Projects */
 @media (max-width: 992px) {
   .project-wrapper {
-    max-width: calc(100% - 150px);
+    max-width: calc(100% - 110px);
   }
   .project-card {
     grid-template-columns: 1fr;
@@ -1288,7 +1208,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 
 /************ Contact Css ************/
 .contact {
-  padding: 50px 0;
+  padding-bottom: 40px;
 }
 
 .contact img {
@@ -1332,10 +1252,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 }
 
 .contact form button {
-  overflow: hidden;
-  margin-top: 20px;
   justify-content: center;
-  width: 60px;
   height: 60px;
   border: none;
   border-radius: 20px;
@@ -1375,6 +1292,10 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
   position: relative;
   z-index: 1;
   transition: color 0.3s ease-in-out;
+}
+
+.contact .spotlight-container {
+  padding: 80px 0px 50px 0px;
 }
 
 /* Mobile Responsive Contact */
@@ -1448,4 +1369,17 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon {
 
 .footer-divider {
   color: #fff;
+}
+
+.connect-button {
+  margin-top: 20px;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
 }

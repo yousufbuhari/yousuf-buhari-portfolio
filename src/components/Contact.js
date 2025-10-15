@@ -80,7 +80,7 @@ export const Contact = () => {
     <section className="contact" id="connect">
       <Container className="contact-content">
         <div className="spotlight-container" data-aos="fade-up">
-          <span className="spotlight-heading">Get In Touch</span>
+          <span className="spotlight-heading">Connect</span>
         </div>
         <Row className="justify-content-center align-items-center min-vh-100">
           <Col xs={12} lg={6} className="text-center mb-4 mb-lg-0">
@@ -124,17 +124,16 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} data-aos="fade-up">
                 <Row>
                   <Col xs={12} className="mb-3">
                     <input
                       type="text"
                       value={formDetails.name}
-                      placeholder="Your Name"
+                      placeholder="Who am I talking to?"
                       onChange={(e) => onFormUpdate("name", e.target.value)}
                       required
                       style={{ width: "100%" }}
-                      data-aos="fade-up"
                     />
                   </Col>
 
@@ -142,11 +141,10 @@ export const Contact = () => {
                     <input
                       type="email"
                       value={formDetails.email}
-                      placeholder="Email Address"
+                      placeholder="Where can I send a reply?"
                       onChange={(e) => onFormUpdate("email", e.target.value)}
                       required
                       style={{ width: "100%" }}
-                      data-aos="fade-up"
                     />
                   </Col>
 
@@ -154,16 +152,15 @@ export const Contact = () => {
                     <textarea
                       rows="6"
                       value={formDetails.message}
-                      placeholder="Message"
+                      placeholder="What’s on your mind?"
                       onChange={(e) => onFormUpdate("message", e.target.value)}
                       required
                       style={{ width: "100%" }}
-                      data-aos="fade-up"
                     ></textarea>
                   </Col>
 
                   <Col xs={12}>
-                    <button type="submit" className="w-100" data-aos="fade-up">
+                    <button type="submit" className="w-100" >
                       <span>{buttonText}</span>
                     </button>
                   </Col>

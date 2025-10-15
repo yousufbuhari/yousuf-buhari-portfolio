@@ -14,14 +14,14 @@ export const AboutMe = () => {
         <span className="spotlight-heading">About Me</span>
       </div>
 
-      <div className="about-text-container">
+      <div className="about-text-container" data-aos="fade-up">
         <div>
-          <p data-aos="fade-up">
+          <p>
             Hi! I'm <strong>Yousuf Buhari K M</strong> — an Android developer
             who loves turning ideas into apps that people actually enjoy using.
           </p>
 
-          <p data-aos="fade-up">
+          <p>
             Funny enough, I started out with a{" "}
             <strong>B.E. in Mechanical Engineering</strong>, but somewhere along
             the way, I got hooked on coding. I took the leap, joined{" "}
@@ -30,7 +30,7 @@ export const AboutMe = () => {
             software journey really kicked off.
           </p>
 
-          <p data-aos="fade-up">
+          <p>
             I started my Android journey in 2024, and ever since, I’ve been
             enjoying the process of learning, experimenting, and turning ideas
             into apps that are clean, intuitive, and fun to use. I love

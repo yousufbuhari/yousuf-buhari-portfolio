@@ -2,10 +2,6 @@
 
 A modern, responsive single-page portfolio showcasing Android development projects, technical skills, and professional contact information.
 
-## 🚀 Live Demo
-
-[View Portfolio](https://yousufbuhari.github.io) *(Update with your actual deployment URL)*
-
 ## 🛠️ Tech Stack
 
 ### Core Framework
@@ -33,78 +29,6 @@ A modern, responsive single-page portfolio showcasing Android development projec
 - **React Router Hash Link 2.4.3** - Smooth scrolling to page sections
 - **React Multi Carousel 2.8.1** - Skills carousel component
 - **Swiper 12.0.2** - Touch slider functionality
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── AboutMe.js          # Personal introduction and resume button
-│   ├── Banner.js           # Hero section with animated name
-│   ├── Contact.js          # Contact form with EmailJS integration
-│   ├── Loader.js           # Initial page loading animation
-│   ├── NavBar.js           # Navigation with active section highlighting
-│   ├── Projects.js         # Project showcase with detailed metadata
-│   └── Skills.js           # Technical skills grid with tooltips
-├── assets/
-│   ├── font/               # Custom Centra font files
-│   └── img/                # Project images, icons, and graphics
-├── App.js                  # Main application component
-├── App.css                 # Global styles and component styling
-├── index.js                # Application entry point
-└── index.css               # Base CSS reset
-```
-
-## ✨ Features
-
-### 🎨 Visual Design
-- **Dark Theme** - Modern dark color scheme with gradient accents
-- **Responsive Layout** - Mobile-first design with Bootstrap grid system
-- **Custom Animations** - Gradient text effects, floating elements, and scroll animations
-- **Glassmorphism** - Backdrop blur effects on navigation and cards
-- **Interactive Elements** - Hover effects, expanding buttons, and smooth transitions
-
-### 🧭 Navigation
-- **Fixed Navigation** - Floating navbar with backdrop blur
-- **Active Section Highlighting** - Dynamic navigation highlighting based on scroll position
-- **Smooth Scrolling** - Hash link navigation between sections
-- **Mobile Responsive** - Collapsible navigation for mobile devices
-
-### 📱 Sections
-
-#### Hero Banner
-- Animated gradient text with name
-- Typing effect styling
-- Responsive typography scaling
-
-#### About Me
-- Personal introduction with experience details
-- Interactive resume download button with hover expansion
-- Professional background information
-
-#### Skills Showcase
-- Grid layout of technical skills with icons
-- Hover tooltips showing technology names
-- Responsive grid that adapts to screen size
-
-#### Projects Portfolio
-- Detailed project cards with comprehensive metadata
-- Technology stacks and architecture details
-- Interactive "View in Play Store" buttons
-- Project descriptions and feature highlights
-
-#### Contact Form
-- EmailJS integration for form submissions
-- Real-time form validation
-- Success/error notifications with Material-UI Snackbars
-- Social media links with hover effects
-
-### 🔧 Technical Features
-- **Loading Animation** - Custom dot animation during initial load
-- **Scroll Animations** - AOS animations triggered on scroll
-- **Form Handling** - Controlled form inputs with state management
-- **Error Handling** - Comprehensive error handling for email service
-- **Performance Optimized** - Efficient React patterns and lazy loading
 
 ## 🚀 Getting Started
 

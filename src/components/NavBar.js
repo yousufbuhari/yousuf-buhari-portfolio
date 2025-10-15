@@ -24,7 +24,7 @@ export const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ["home", "aboutMe", "skills", "projects", "connect"];
+    const sections = ["home", "aboutMe", "skills", "experience", "projects", "connect"];
 
     const onScroll = () => {
       if (window.scrollY > 50) setScrolled(true);
@@ -123,6 +123,21 @@ export const NavBar = () => {
               <Nav.Link
                 as={HashLink}
                 smooth
+                to="#experience"
+                className={
+                  activeLink === "experience" && (animationComplete || scrolled)
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                onClick={handleNavClick}
+              >
+                <span className="navbar-text" data-aos="fade-down">
+                  Experience
+                </span>
+              </Nav.Link>
+              <Nav.Link
+                as={HashLink}
+                smooth
                 to="#projects"
                 className={
                   activeLink === "projects" && (animationComplete || scrolled)
@@ -147,7 +162,7 @@ export const NavBar = () => {
                 onClick={handleNavClick}
               >
                 <span className="navbar-text" data-aos="fade-down">
-                  Let's Connect
+                  Connect
                 </span>
               </Nav.Link>
             </Nav>
