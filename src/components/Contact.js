@@ -84,7 +84,7 @@ export const Contact = () => {
         </div>
         <Row className="justify-content-center align-items-center min-vh-100">
           <Col xs={12} lg={6} className="text-center mb-4 mb-lg-0">
-            <div data-aos="fade-up">
+            <div>
               <img
                 src={contactImg}
                 alt="Contact"

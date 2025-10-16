@@ -5,7 +5,6 @@ import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner";
 import { AboutMe } from "./components/AboutMe";
 import { Skills } from "./components/Skills";
-import { WorkExperience } from "./components/WorkExperience";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Loader } from "./components/Loader";
@@ -30,7 +29,6 @@ function App() {
           <Banner />
           <AboutMe />
           <Skills />
-          <WorkExperience />
           <Projects />
           <Contact />
           <Footer />
