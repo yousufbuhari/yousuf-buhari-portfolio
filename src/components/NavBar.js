@@ -15,7 +15,7 @@ export const NavBar = () => {
   const handleNavClick = () => setExpanded(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 500 });
 
     const timer = setTimeout(() => {
       setAnimationComplete(true);

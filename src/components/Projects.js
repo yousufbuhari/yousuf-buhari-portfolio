@@ -9,7 +9,7 @@ export const Projects = () => {
   const [expandedProject, setExpandedProject] = useState(null);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 500 });
   }, []);
 
   const projectsData = [

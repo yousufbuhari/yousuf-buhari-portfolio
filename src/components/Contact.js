@@ -14,7 +14,7 @@ import { useEffect } from "react";
 
 export const Contact = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 500 });
   }, []);
 
   emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);

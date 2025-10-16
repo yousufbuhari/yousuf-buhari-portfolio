@@ -407,7 +407,7 @@ nav.navbar .navbar-toggler.expanded .navbar-toggler-icon:after {
 }
 
 .navbar-text {
-  background: var(--text-gradient);
+  background: #fff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
@@ -531,7 +531,7 @@ nav.navbar .navbar-nav {
 .banner-heading {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 500;
-  color: var(--text-gradient);
+  color: #fff;
   margin-top: 10px;
   line-height: 1.4;
 }
@@ -947,9 +947,7 @@ nav.navbar .navbar-nav {
 .project-title {
   font-size: 1.5rem;
   font-weight: 700;
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
   margin: 0 0 15px 0;
 }
 
@@ -1045,13 +1043,13 @@ color: #a0a0a0;}
 
 .tech-label {
   font-weight: 600;
-  color: #6bc5f8;
+  color: #fff;
   min-width: 115px;
   font-size: 0.9rem;
 }
 
 .tech-value {
-  color: #e0e0e0;
+  color: #a0a0a0;
   font-size: 0.9rem;
   flex: 1;
 }
@@ -1093,6 +1091,40 @@ color: #a0a0a0;}
 
   .tech-stack-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-wrapper {
+    max-width: calc(100% - 20px);
+    padding: 0 20px;
+  }
+  .project-card {
+    padding: 20px;
+  }
+  .project-title {
+    font-size: 1.2rem;
+  }
+  .project-description {
+    font-size: 0.9rem;
+  }
+  .expand-btn {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+  }
+  .tech-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .tech-label {
+    font-size: 0.85rem;
+    min-width: auto;
+    width: 100%;
+  }
+  .tech-value {
+    font-size: 0.85rem;
+    width: 100%;
   }
 }
 
