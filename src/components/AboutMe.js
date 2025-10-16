@@ -11,7 +11,7 @@ export const AboutMe = () => {
   return (
     <section className="about" id="aboutMe">
       <div className="spotlight-container" data-aos="fade-up">
-        <span className="spotlight-heading">About Me</span>
+        <span className="spotlight-heading">Who Am I?</span>
       </div>
 
       <div className="about-text-container" data-aos="fade-up">
@@ -31,11 +31,12 @@ export const AboutMe = () => {
           </p>
 
           <p>
-            I started my Android journey in 2024, and ever since, I’ve been
-            enjoying the process of learning, experimenting, and turning ideas
-            into apps that are clean, intuitive, and fun to use. I love
-            exploring new tools and techniques to sharpen my skills and create
-            smoother, more engaging experiences for users.
+            I started my Android development journey in 2024, and it’s been an
+            awesome ride of learning, experimenting, and creating ever since. I
+            love turning ideas into apps that are easy to use, look great, and
+            run smoothly. I’m always exploring new tools and techniques to level
+            up my skills and make every app I build an even better experience
+            for users.
           </p>
         </div>
 

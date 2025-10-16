@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
+import navBarLogo from "../assets/img/navbar-logo.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -24,35 +25,16 @@ export const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ["home", "aboutMe", "skills", "experience", "projects", "connect"];
+    if (expanded) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-    const onScroll = () => {
-      if (window.scrollY > 50) setScrolled(true);
-      else setScrolled(false);
-
-      if (animationComplete || window.scrollY > 100) {
-        let currentSection = activeLink;
-
-        for (let i = sections.length - 1; i >= 0; i--) {
-          const section = sections[i];
-          const element = document.getElementById(section);
-          if (element) {
-            const top = element.offsetTop - 100;
-            if (window.scrollY >= top) {
-              currentSection = section;
-              break;
-            }
-          }
-        }
-
-        setActiveLink(currentSection);
-      }
+    return () => {
+      document.body.style.overflow = "auto";
     };
-
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [activeLink, animationComplete]);
+  }, [expanded]);
 
   return (
     <Router>
@@ -65,6 +47,9 @@ export const NavBar = () => {
         onToggle={setExpanded}
       >
         <Container>
+          <Navbar.Brand href="#home" className="navbar-brand">
+            <span className="brand-name">Portfolio</span>
+          </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             onClick={handleToggle}
@@ -86,9 +71,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text" data-aos="fade-down">
-                  Home
-                </span>
+                <span className="navbar-text">Home</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -101,9 +84,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text" data-aos="fade-down">
-                  About Me
-                </span>
+                <span className="navbar-text">About Me</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -116,9 +97,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text" data-aos="fade-down">
-                  Skills
-                </span>
+                <span className="navbar-text">Skills</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -131,9 +110,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text" data-aos="fade-down">
-                  Experience
-                </span>
+                <span className="navbar-text">Experience</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -146,9 +123,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text" data-aos="fade-down">
-                  Projects
-                </span>
+                <span className="navbar-text">Projects</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -161,9 +136,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text" data-aos="fade-down">
-                  Connect
-                </span>
+                <span className="navbar-text">Connect</span>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

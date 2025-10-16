@@ -2,7 +2,6 @@ import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import letsConnectIcon from "../assets/img/ic-email.svg";
 
 export const Banner = () => {
   useEffect(() => {
