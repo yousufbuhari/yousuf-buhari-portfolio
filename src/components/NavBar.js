@@ -23,18 +23,36 @@ export const NavBar = () => {
 
     return () => clearTimeout(timer);
   }, []);
+useEffect(() => {
+  const sections = ["home", "aboutMe", "skills", "experience", "projects", "connect"];
 
-  useEffect(() => {
-    if (expanded) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
+  const onScroll = () => {
+    if (window.scrollY > 50) setScrolled(true);
+    else setScrolled(false);
+
+    // Close navbar on scroll
+    setExpanded(false); // always closes when scrolling
+
+    // Update active link
+    if (animationComplete || window.scrollY > 100) {
+      let currentSection = activeLink;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        const element = document.getElementById(sections[i]);
+        if (element && window.scrollY >= element.offsetTop - 100) {
+          currentSection = sections[i];
+          break;
+        }
+      }
+
+      setActiveLink(currentSection);
     }
+  };
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [expanded]);
+  window.addEventListener("scroll", onScroll);
+  return () => window.removeEventListener("scroll", onScroll);
+}, [activeLink, animationComplete]);
 
   return (
     <Router>
@@ -71,7 +89,9 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Home</span>
+                <span className="navbar-text">
+                  Home
+                </span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -84,7 +104,9 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">About Me</span>
+                <span className="navbar-text">
+                  About Me
+                </span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -97,7 +119,9 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Skills</span>
+                <span className="navbar-text">
+                  Skills
+                </span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -110,7 +134,9 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Experience</span>
+                <span className="navbar-text">
+                  Experience
+                </span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -123,7 +149,9 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Projects</span>
+                <span className="navbar-text">
+                  Projects
+                </span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -136,7 +164,9 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Connect</span>
+                <span className="navbar-text">
+                  Connect
+                </span>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
