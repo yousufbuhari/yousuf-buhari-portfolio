@@ -874,7 +874,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 468px) {
   .skill .container {
-    max-width: calc(100% - 30px);
+    max-width: calc(100% - 20px);
     margin: 0 auto;
   }
   .skill-box-wrapper {
@@ -884,9 +884,9 @@ nav.navbar .navbar-nav {
     gap: 20px;
   }
   .skill-box {
-    width: 150px;
-    height: 150px;
-    margin-top: 10px;
+    width: 130px;
+    height: 130px;
+    margin-top: 15px;
   }
   .tech-stack-highlight {
     font-size: 25px;
@@ -908,7 +908,6 @@ nav.navbar .navbar-nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  padding-bottom: 100px;
 }
 
 .project-wrapper .project-card {

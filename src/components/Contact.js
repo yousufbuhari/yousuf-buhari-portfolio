@@ -123,7 +123,7 @@ export const Contact = () => {
                     <input
                       type="text"
                       value={formDetails.name}
-                      placeholder="Who am I talking to?"
+                      placeholder="Your Name"
                       onChange={(e) => onFormUpdate("name", e.target.value)}
                       required
                     />
@@ -133,7 +133,7 @@ export const Contact = () => {
                     <input
                       type="email"
                       value={formDetails.email}
-                      placeholder="Where can I send a reply?"
+                      placeholder="Your Email"
                       onChange={(e) => onFormUpdate("email", e.target.value)}
                       required
                     />

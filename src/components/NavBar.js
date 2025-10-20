@@ -12,7 +12,7 @@ export const NavBar = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const handleToggle = () => setExpanded(!expanded);
   const handleNavClick = () => setExpanded(false);
-  const [isAvailable] = useState(true); //Change this for status
+  const [isAvailable] = useState(false); //Change this for status
 
   useEffect(() => {
     AOS.init({ duration: 500 });
