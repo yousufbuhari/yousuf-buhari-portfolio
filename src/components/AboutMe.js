@@ -11,7 +11,7 @@ export const AboutMe = () => {
   return (
     <section className="about" id="aboutMe">
       <div className="spotlight-container" data-aos="fade-up">
-        <span className="spotlight-heading">Who Am I?</span>
+        <span className="spotlight-heading">About Me</span>
       </div>
 
       <div className="about-text-container" data-aos="fade-up">
@@ -37,6 +37,13 @@ export const AboutMe = () => {
             run smoothly. I’m always exploring new tools and techniques to level
             up my skills and make every app I build an even better experience
             for users.
+          </p>
+
+          <p>
+            I also explored <strong>web development</strong> by building my
+            portfolio with React and Bootstrap. It helped me learn responsive
+            design, animations, and integrating tools like EmailJS, adding web
+            skills alongside my Android experience.
           </p>
         </div>
 

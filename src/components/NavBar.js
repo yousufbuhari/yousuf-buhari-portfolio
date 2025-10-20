@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
-import navBarLogo from "../assets/img/navbar-logo.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -13,6 +12,7 @@ export const NavBar = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const handleToggle = () => setExpanded(!expanded);
   const handleNavClick = () => setExpanded(false);
+  const [isAvailable] = useState(true); //Change this for status
 
   useEffect(() => {
     AOS.init({ duration: 500 });
@@ -23,36 +23,33 @@ export const NavBar = () => {
 
     return () => clearTimeout(timer);
   }, []);
-useEffect(() => {
-  const sections = ["home", "aboutMe", "skills", "projects", "connect"];
+  useEffect(() => {
+    const sections = ["home", "aboutMe", "skills", "projects", "connect"];
 
-  const onScroll = () => {
-    if (window.scrollY > 50) setScrolled(true);
-    else setScrolled(false);
+    const onScroll = () => {
+      if (window.scrollY > 50) setScrolled(true);
+      else setScrolled(false);
 
-    // Close navbar on scroll
-    setExpanded(false); // always closes when scrolling
+      setExpanded(false); // always closes when scrolling
 
-    // Update active link
-    if (animationComplete || window.scrollY > 100) {
-      let currentSection = activeLink;
+      if (animationComplete || window.scrollY > 100) {
+        let currentSection = activeLink;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        const element = document.getElementById(sections[i]);
-        if (element && window.scrollY >= element.offsetTop - 100) {
-          currentSection = sections[i];
-          break;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const element = document.getElementById(sections[i]);
+          if (element && window.scrollY >= element.offsetTop - 100) {
+            currentSection = sections[i];
+            break;
+          }
         }
+
+        setActiveLink(currentSection);
       }
+    };
 
-      setActiveLink(currentSection);
-    }
-  };
-
-  window.addEventListener("scroll", onScroll);
-  return () => window.removeEventListener("scroll", onScroll);
-}, [activeLink, animationComplete]);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [activeLink, animationComplete]);
 
   return (
     <Router>
@@ -66,7 +63,18 @@ useEffect(() => {
       >
         <Container>
           <Navbar.Brand href="#home" className="navbar-brand">
-            <span className="brand-name">Portfolio</span>
+            <span className="brand-name">
+              <span className="brand-text">YB</span>
+              <span
+                className={`status-indicator ${
+                  isAvailable ? "available" : "unavailable"
+                }`}
+              >
+                <span className="status-text">
+                  {isAvailable ? "Open to Work" : "Not Available"}
+                </span>
+              </span>
+            </span>
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
@@ -89,9 +97,7 @@ useEffect(() => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">
-                  Home
-                </span>
+                <span className="navbar-text">Home</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -104,9 +110,7 @@ useEffect(() => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">
-                  About Me
-                </span>
+                <span className="navbar-text">About Me</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -119,9 +123,7 @@ useEffect(() => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">
-                  Skills
-                </span>
+                <span className="navbar-text">Skills</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -134,9 +136,7 @@ useEffect(() => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">
-                  Projects
-                </span>
+                <span className="navbar-text">Projects</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -149,9 +149,7 @@ useEffect(() => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">
-                  Connect
-                </span>
+                <span className="navbar-text">Connect</span>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

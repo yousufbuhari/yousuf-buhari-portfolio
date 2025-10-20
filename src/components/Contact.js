@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import navIcon1 from "../assets/img/ic-linkedin.svg";
 import navIcon2 from "../assets/img/ic-github.png";
@@ -79,24 +78,14 @@ export const Contact = () => {
   return (
     <section className="contact" id="connect">
       <Container className="contact-content">
-        <div className="spotlight-container" data-aos="fade-up">
-          <span className="spotlight-heading">Connect</span>
-        </div>
-        <Row className="justify-content-center align-items-center min-vh-100">
+        <Row className="contact-container">
           <Col xs={12} lg={6} className="text-center mb-4 mb-lg-0">
-            <div>
-              <img
-                src={contactImg}
-                alt="Contact"
-                className="float-animation"
-                style={{ maxWidth: "100%" }}
-              />
-            </div>
-          </Col>
+            <div data-aos="fadr-right">
+              <h2 className="get-in-touch-title" data-aos="fade-right">
+                Let's <br /> Get In <br /> Touch.
+              </h2>
 
-          <Col xs={12} lg={6}>
-            <div>
-              <div className="social-wrapper" data-aos="fade-up">
+              <div className="social-wrapper" data-aos="fade-right">
                 <div className="social-icon">
                   <a
                     href="https://www.linkedin.com/in/yousufbuhari"
@@ -123,44 +112,45 @@ export const Contact = () => {
                   </a>
                 </div>
               </div>
+            </div>
+          </Col>
 
-              <form onSubmit={handleSubmit} data-aos="fade-up">
+          <Col xs={12} lg={6}>
+            <div>
+              <form onSubmit={handleSubmit} data-aos="fade-left">
                 <Row>
-                  <Col xs={12} className="mb-3">
+                  <Col xs={12} className="mb-2">
                     <input
                       type="text"
                       value={formDetails.name}
                       placeholder="Who am I talking to?"
                       onChange={(e) => onFormUpdate("name", e.target.value)}
                       required
-                      style={{ width: "100%" }}
                     />
                   </Col>
 
-                  <Col xs={12} className="mb-3">
+                  <Col xs={12} className="mb-2">
                     <input
                       type="email"
                       value={formDetails.email}
                       placeholder="Where can I send a reply?"
                       onChange={(e) => onFormUpdate("email", e.target.value)}
                       required
-                      style={{ width: "100%" }}
                     />
                   </Col>
 
-                  <Col xs={12} className="mb-3">
+                  <Col xs={12} className="mb-2">
                     <textarea
                       rows="6"
                       value={formDetails.message}
                       placeholder="What’s on your mind?"
                       onChange={(e) => onFormUpdate("message", e.target.value)}
                       required
-                      style={{ width: "100%" }}
                     ></textarea>
                   </Col>
 
                   <Col xs={12}>
-                    <button type="submit" className="w-100" >
+                    <button type="submit" className="w-100">
                       <span>{buttonText}</span>
                     </button>
                   </Col>
