@@ -12,7 +12,7 @@ export const NavBar = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const handleToggle = () => setExpanded(!expanded);
   const handleNavClick = () => setExpanded(false);
-  const [isAvailable] = useState(false); //Change this for status
+  const [isAvailable] = useState(true); //Change this for status
 
   useEffect(() => {
     AOS.init({ duration: 500 });
@@ -23,14 +23,13 @@ export const NavBar = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
   useEffect(() => {
-    const sections = ["home", "aboutMe", "skills", "projects", "connect"];
+    const sections = ["home", "aboutMe", "skills", "experience", "projects", "connect"];
 
     const onScroll = () => {
       if (window.scrollY > 50) setScrolled(true);
       else setScrolled(false);
-
-      setExpanded(false); // always closes when scrolling
 
       if (animationComplete || window.scrollY > 100) {
         let currentSection = activeLink;
@@ -51,6 +50,28 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [activeLink, animationComplete]);
 
+  useEffect(() => {
+    const menu = document.querySelector(".navbar-collapse");
+    const overlay = document.querySelector(".nav-overlay");
+    const preventScroll = (e) => e.preventDefault();
+
+    if (expanded && menu && overlay) {
+      menu.addEventListener("touchmove", preventScroll, { passive: false });
+      menu.addEventListener("wheel", preventScroll, { passive: false });
+      overlay.addEventListener("touchmove", preventScroll, { passive: false });
+      overlay.addEventListener("wheel", preventScroll, { passive: false });
+    }
+
+    return () => {
+      if (menu && overlay) {
+        menu.removeEventListener("touchmove", preventScroll);
+        menu.removeEventListener("wheel", preventScroll);
+        overlay.removeEventListener("touchmove", preventScroll);
+        overlay.removeEventListener("wheel", preventScroll);
+      }
+    };
+  }, [expanded]);
+
   return (
     <Router>
       <Navbar
@@ -63,7 +84,7 @@ export const NavBar = () => {
       >
         <Container>
           <Navbar.Brand href="#home" className="navbar-brand">
-            <span className="brand-name">
+            <span className="brand-name" data-aos="fade-down">
               <span className="brand-text">YB</span>
               <span
                 className={`status-indicator ${
@@ -155,6 +176,11 @@ export const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      <div
+        className={`nav-overlay ${expanded ? "active" : ""}`}
+        onClick={() => setExpanded(false)}
+      />
     </Router>
   );
 };
