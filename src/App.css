@@ -498,7 +498,7 @@ nav.navbar .navbar-nav {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0); /* transparent */
+  background: rgba(0, 0, 0, 0);
   z-index: 9997;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -572,8 +572,8 @@ nav.navbar .navbar-nav {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  max-width: calc(100% - 300px);
-  padding: 150px 0px 00px 0px;
+  max-width: 100%;
+  padding: 150px 150px 0px 150px;
   margin: 0 auto;
 }
 
@@ -587,7 +587,6 @@ nav.navbar .navbar-nav {
 
 #name {
   font-size: 80px;
-  font-size: clamp(3.5rem, 12vw, 6rem);
   font-weight: 700;
   width: fit-content;
   display: flex;
@@ -664,7 +663,7 @@ nav.navbar .navbar-nav {
   background: var(--button-gradient);
   color: #fff;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   border-radius: 14px;
   cursor: pointer;
@@ -711,9 +710,7 @@ nav.navbar .navbar-nav {
 /* Mobile Responsive Banner */
 @media (max-width: 992px) {
   .banner {
-    padding: 150px 0px 0px 0px;
-    max-width: calc(100% - 200px);
-    margin: 0 auto;
+    padding: 150px 100px 0px 100px;
   }
   #name {
     font-size: 70px;
@@ -725,9 +722,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 850px) {
   .banner {
-    padding: 150px 0px 0px 0px;
-    max-width: calc(100% - 150px);
-    margin: 0 auto;
+    padding: 150px 75px 0px 75px;
   }
   #name {
     font-size: 60px;
@@ -739,9 +734,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 768px) {
   .banner {
-    padding: 150px 0px 0px 0px;
-    max-width: calc(100% - 90px);
-    margin: 0 auto;
+    padding: 150px 45px 0px 45px;
   }
   #name {
     font-size: 50px;
@@ -749,25 +742,26 @@ nav.navbar .navbar-nav {
   .banner-heading {
     font-size: 50px;
   }
+  .banner-description {
+    max-width: 270px;
+  }
 }
 
 @media (max-width: 480px) {
   .banner {
-    padding: 150px 0px 0px 0px;
-    max-width: calc(100% - 80px);
+    padding: 150px 40px 0px 40px;
     text-align: left;
-    margin: 0 auto;
   }
   .intro-text {
     font-size: 25px;
     margin-bottom: 15px;
   }
   #name {
-    font-size: 40px;
+    font-size: 38px;
     line-height: 1.2;
   }
   .banner-heading {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1.2;
     margin-bottom: 15px;
   }
@@ -784,7 +778,8 @@ nav.navbar .navbar-nav {
   position: relative;
   z-index: 1;
   margin: 0 auto;
-  max-width: calc(100% - 200px);
+  max-width: 100%;
+  padding: 0 100px;
 }
 
 .about-text-container {
@@ -887,8 +882,7 @@ nav.navbar .navbar-nav {
 /* Mobile Responsive About Me */
 @media (max-width: 992px) {
   .about {
-    max-width: calc(100% - 110px);
-    margin: 0 auto;
+    padding: 0 55px;
   }
   .about-text-container {
     padding-top: 30px;
@@ -903,8 +897,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 480px) {
   .about {
-    max-width: calc(100% - 30px);
-    margin: 0 auto;
+    padding: 0 15px;
   }
   .about-text-container {
     padding: 5px 20px;
@@ -923,9 +916,9 @@ nav.navbar .navbar-nav {
 }
 
 .skill .container {
-  max-width: calc(100% - 250px);
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 125px;
 }
 
 .skill-box-wrapper {
@@ -970,7 +963,7 @@ nav.navbar .navbar-nav {
   position: absolute;
   top: -20px;
   opacity: 0;
-  background-color: #1a1a2e; /* ADD THIS LINE */
+  background-color: #1a1a2e;
   background-image: var(--card-gradient);
   border: 1px solid #2a2a3d;
   font-family: "Centra", sans-serif !important;
@@ -1005,8 +998,7 @@ nav.navbar .navbar-nav {
 /* Mobile Responsive Skills */
 @media (max-width: 992px) {
   .skill .container {
-    max-width: calc(100% - 105px);
-    margin: 0 auto;
+    padding: 0 52.5px;
   }
   .skill-box-wrapper {
     gap: 20px;
@@ -1038,8 +1030,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 468px) {
   .skill .container {
-    max-width: calc(100% - 0px);
-    margin: 0 auto;
+    padding: 0 15px;
   }
   .skill-box-wrapper {
     display: flex;
@@ -1048,8 +1039,8 @@ nav.navbar .navbar-nav {
     gap: 20px;
   }
   .skill-box {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     margin-top: 20px;
   }
   .tech-stack-highlight {
@@ -1065,11 +1056,13 @@ nav.navbar .navbar-nav {
     white-space: nowrap;
   }
 }
+
 /************ Projects Css ************/
 .project-wrapper {
   position: relative;
   z-index: 1;
-  max-width: calc(100% - 200px);
+  max-width: 100%;
+  padding: 0 100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1190,10 +1183,10 @@ nav.navbar .navbar-nav {
   font-size: 15px;
   font-weight: 500;
   border: none;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
   margin-top: 30px;
-  padding: 8px 20px; 
+  padding: 8px 20px;
   transition: all 0.3s ease;
   font-family: "Fira Code", "SF Mono", monospace;
   border-radius: 30px;
@@ -1204,12 +1197,8 @@ nav.navbar .navbar-nav {
 }
 
 .project-link-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #00bfff;
-}
-
-.project-link-button:hover {
-  color: #6bc5f8;
+  background: rgba(0, 191, 255, 0.15);
+  color: #b8e6ff;
 }
 
 .link-icon {
@@ -1234,8 +1223,7 @@ nav.navbar .navbar-nav {
 /* Mobile Responsive Projects */
 @media (max-width: 992px) {
   .project-wrapper {
-    max-width: calc(100% - 250px);
-    margin: 0 auto;
+    padding: 0 125px;
     grid-template-columns: 1fr;
   }
 
@@ -1253,8 +1241,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 768px) {
   .project-wrapper {
-    max-width: calc(100% - 100px);
-    margin: 0 auto;
+    padding: 0 50px;
   }
   .project-card {
     padding: 25px;
@@ -1274,9 +1261,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 480px) {
   .project-wrapper {
-    max-width: calc(100% - 20px);
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
   }
   .project-card {
     padding: 20px;

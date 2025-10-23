@@ -14,7 +14,7 @@ export const Banner = () => {
         <h1 class="intro-text" data-aos="fade-up">
           Hello(), I'm
         </h1>
-        <h1 id="name">Yousuf Buhari.</h1>
+        <h1 id="name" data-aos="fade-up">Yousuf Buhari.</h1>
         <h1 class="banner-heading" data-aos="fade-up">
           I build things for the Android.
         </h1>

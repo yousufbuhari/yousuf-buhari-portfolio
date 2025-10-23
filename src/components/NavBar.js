@@ -118,7 +118,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Home</span>
+                <span className="navbar-text" data-aos="fade-down">Home</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -131,7 +131,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">About Me</span>
+                <span className="navbar-text" data-aos="fade-down">About Me</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -144,7 +144,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Skills</span>
+                <span className="navbar-text" data-aos="fade-down">Skills</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -157,7 +157,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Projects</span>
+                <span className="navbar-text" data-aos="fade-down">Projects</span>
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -170,7 +170,7 @@ export const NavBar = () => {
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text">Connect</span>
+                <span className="navbar-text" data-aos="fade-down">Connect</span>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
