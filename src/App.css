@@ -137,7 +137,7 @@ html {
   }
 }
 
-/* Mobile Responsive Blob */
+/* Responsive Blob */
 @media (max-width: 998px) {
   .blob {
     width: 0px;
@@ -508,7 +508,7 @@ nav.navbar .navbar-nav {
   pointer-events: all;
 }
 
-/* Mobile Responsive Navbar */
+/* Responsive Navbar */
 @media (max-width: 991.98px) {
   nav.navbar {
     background-image: var(--card-gradient);
@@ -707,7 +707,7 @@ nav.navbar .navbar-nav {
   transform: translateX(100%);
 }
 
-/* Mobile Responsive Banner */
+/* Responsive Banner */
 @media (max-width: 992px) {
   .banner {
     padding: 150px 100px 0px 100px;
@@ -879,7 +879,7 @@ nav.navbar .navbar-nav {
   padding-right: 10px;
 }
 
-/* Mobile Responsive About Me */
+/* Responsive About Me */
 @media (max-width: 992px) {
   .about {
     padding: 0 55px;
@@ -890,6 +890,9 @@ nav.navbar .navbar-nav {
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding: 0 18px;
+  }
   .about p {
     font-size: 18px;
   }
@@ -897,7 +900,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 480px) {
   .about {
-    padding: 0 15px;
+    padding: 0 20px;
   }
   .about-text-container {
     padding: 5px 20px;
@@ -995,7 +998,7 @@ nav.navbar .navbar-nav {
   font-family: "Fira Code", "SF Mono", monospace;
 }
 
-/* Mobile Responsive Skills */
+/* Responsive Skills */
 @media (max-width: 992px) {
   .skill .container {
     padding: 0 52.5px;
@@ -1025,6 +1028,12 @@ nav.navbar .navbar-nav {
   }
   .tooltip-short {
     display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill .container {
+    padding: 0 30px;
   }
 }
 
@@ -1080,7 +1089,6 @@ nav.navbar .navbar-nav {
 }
 
 .project-card {
-  background-color: #1a1a2e;
   background-image: var(--card-gradient);
   border: 1px solid #2a2a3d;
   border-radius: 20px;
@@ -1088,6 +1096,7 @@ nav.navbar .navbar-nav {
   position: relative;
   overflow: hidden;
   display: flex;
+  z-index: 1;
   flex-direction: column;
 }
 
@@ -1095,11 +1104,6 @@ nav.navbar .navbar-nav {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at top right,
-    rgba(107, 197, 248, 0.05),
-    transparent 70%
-  );
   pointer-events: none;
 }
 
@@ -1144,10 +1148,10 @@ nav.navbar .navbar-nav {
 
 .project-description {
   margin-top: 15px;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 200;
   line-height: 1.6;
-  color: #a0a0a0;
+  color: #fff;
 }
 
 .tech-tags {
@@ -1220,7 +1224,7 @@ nav.navbar .navbar-nav {
   }
 }
 
-/* Mobile Responsive Projects */
+/* Responsive Projects */
 @media (max-width: 992px) {
   .project-wrapper {
     padding: 0 125px;
@@ -1261,7 +1265,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 480px) {
   .project-wrapper {
-    padding: 0 10px;
+    padding: 0 30px;
   }
   .project-card {
     padding: 20px;
@@ -1451,7 +1455,7 @@ nav.navbar .navbar-nav {
 
 @media (max-width: 992px) {
   .contact {
-    padding: 60px 20px;
+    padding: 100px 20px;
     margin-top: 50px;
     text-align: center;
   }
@@ -1530,4 +1534,191 @@ nav.navbar .navbar-nav {
   color: #a0a0a0;
   font-weight: 500;
   font-size: 14px;
+}
+
+/* ************ Timeline Css ************/
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2.5px;
+  background: #2a2a3d;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: left;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-card {
+  background-image: var(--card-gradient);
+  border: 1px solid #2a2a3d;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  background: #2a2a3d;
+  border: 1px solid #8d8c8c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.timeline-icon:hover {
+  transform: scale(1.1);
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+  right: -65px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+  left: -65px;
+}
+
+.timeline-icon img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  margin: 10px 0;
+}
+
+.timeline-title {
+  font-size: 25px;
+  font-weight: 700;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timeline-subtitle,
+.timeline-date {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timeline-header .timeline-date::before {
+  content: "|";
+  margin-right: 8px;
+  color: #fff;
+}
+
+.timeline-description {
+  display: block;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 200;
+}
+
+.timeline-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1.2px solid #333;
+}
+
+/* Responsive Timeline Css */
+@media (max-width: 992px) {
+  .timeline {
+    padding: 0 125px;
+  }
+  .timeline::before {
+    display: none;
+  }
+  .timeline-item {
+    width: 100% !important;
+    left: 0 !important;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  .timeline-card {
+    width: 100%;
+    padding: 20px;
+  }
+  .timeline-icon {
+    position: static !important;
+    margin-bottom: 15px;
+  }
+  .timeline-title {
+    font-size: 1.3rem;
+  }
+  .timeline-description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: 0 50px;
+  }
+  .timeline-title {
+    font-size: 1.2rem;
+  }
+  .timeline-subtitle,
+  .timeline-date {
+    font-size: 0.95rem;
+  }
+  .timeline-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    padding: 0 30px;
+  }
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+  .timeline-description {
+    font-size: 0.9rem;
+  }
+  .timeline-subtitle,
+  .timeline-date {
+    font-size: 0.9rem;
+  }
 }

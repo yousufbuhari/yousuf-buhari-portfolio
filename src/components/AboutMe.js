@@ -31,10 +31,10 @@ export const AboutMe = () => {
           </p>
 
           <p>
-            I started learning <strong>Android development</strong> in 2024. Since then, I’ve
-            enjoyed building apps that are easy to use, look good, and work
-            well. I’m always learning new things to improve my skills and make
-            better apps for users.
+            I started learning <strong>Android development</strong> in 2024.
+            Since then, I’ve enjoyed building apps that are easy to use, look
+            good, and work well. I’m always learning new things to improve my
+            skills and make better apps for users.
           </p>
 
           <p>

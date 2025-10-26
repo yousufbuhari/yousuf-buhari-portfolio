@@ -30,7 +30,7 @@ export const Projects = () => {
         "Firebase",
         "Material 3",
         "PayU",
-        "OlaMaps",
+        "Ola Maps",
         "OCR",
       ],
       link: {

@@ -9,6 +9,7 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Loader } from "./components/Loader";
 import { Footer } from "./components/Footer";
+import { Timeline } from "./components/Timeline";
 import { Background } from "./components/Background";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       {/* To have the starry background */}
       {/* <Background /> */}
 
-      <div className= "blob"></div>
+      <div className="blob"></div>
 
       {loading ? (
         <Loader />
@@ -36,6 +37,7 @@ function App() {
             <AboutMe />
             <Skills />
             <Projects />
+            <Timeline />
             <Contact />
             <Footer />
           </div>

@@ -25,7 +25,7 @@ export const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ["home", "aboutMe", "skills", "experience", "projects", "connect"];
+    const sections = ["home", "aboutMe", "skills", "experience", "projects", "timeline"];
 
     const onScroll = () => {
       if (window.scrollY > 50) setScrolled(true);
@@ -102,7 +102,7 @@ export const NavBar = () => {
             onClick={handleToggle}
             className={`nav-right ${expanded ? "expanded" : ""}`}
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" data-aos="fade-down"></span>
           </Navbar.Toggle>
 
           <Navbar.Collapse id="basic-navbar-nav">
@@ -162,15 +162,15 @@ export const NavBar = () => {
               <Nav.Link
                 as={HashLink}
                 smooth
-                to="#connect"
+                to="#timeline"
                 className={
-                  activeLink === "connect" && (animationComplete || scrolled)
+                  activeLink === "timeline" && (animationComplete || scrolled)
                     ? "active navbar-link"
                     : "navbar-link"
                 }
                 onClick={handleNavClick}
               >
-                <span className="navbar-text" data-aos="fade-down">Connect</span>
+                <span className="navbar-text" data-aos="fade-down">Timeline</span>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
