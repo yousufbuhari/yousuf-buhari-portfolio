@@ -1,6 +1,10 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yousufbuhari/yousuf-buhari-portfolio/main/src/assets/img/banner-ss.png" alt="Portfolio Banner" width="100%" />
+</p>
+
 # Yousuf Buhari — Android Developer Portfolio
 
-A modern, responsive single-page portfolio showcasing Android development projects, technical skills, and professional contact information.
+A modern responsive single-page portfolio showcasing Android development projects, technical skills, career timeline and professional contact information
 
 ## 🛠️ Tech Stack
 
@@ -90,6 +94,7 @@ A modern, responsive single-page portfolio showcasing Android development projec
 - Update personal details in `src/components/AboutMe.js`
 - Replace project information in `src/components/Projects.js`
 - Modify skills in `src/components/Skills.js`
+- Update career and education details in `src/components/Timeline.js`
 
 #### Contact Links
 Update social media links in `src/components/Contact.js`:
@@ -113,7 +118,21 @@ onClick={() => window.open("https://your-resume-url.pdf", "_blank")}
 #### Project Links
 Update Play Store links in `src/components/Projects.js`:
 ```javascript
-onClick={() => window.open("https://play.google.com/store/apps/details?id=your.app.package", "_blank")}
+// Play Store
+onClick={() =>
+  window.open(
+    "https://play.google.com/store/apps/details?id=your.app.package",
+    "_blank"
+  )
+}
+
+// GitHub
+onClick={() =>
+  window.open(
+    "https://github.com/your-username/your-project",
+    "_blank"
+  )
+}
 ```
 
 ### Styling Customization
@@ -125,9 +144,9 @@ onClick={() => window.open("https://play.google.com/store/apps/details?id=your.a
 ## 📱 Responsive Design
 
 The portfolio is fully responsive with breakpoints:
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px  
-- **Mobile**: 320px - 767px
+- **Desktop**: 992px and above
+- **Tablet**: 768px - 991px  
+- **Mobile**: up to 767px (optimized for 480px and below)
 
 Key responsive features:
 - Adaptive navigation (collapsible on mobile)
@@ -158,10 +177,12 @@ Key responsive features:
 
 ## 📋 Available Scripts
 
-- `npm start` - Start development server
-- `npm run build` - Create production build
-- `npm test` - Run test suite
-- `npm run eject` - Eject from Create React App (irreversible)
+In the project directory, you can run:
+
+- `npm start` — Runs the app in development mode at [http://localhost:3000](http://localhost:3000)  
+- `npm run build` — Builds the app for production to the `build` folder  
+- `npm test` — Launches the test runner in interactive watch mode  
+- `npm run eject` — Removes Create React App configuration (irreversible)
 
 ## 🔒 Security Notes
 
@@ -171,11 +192,13 @@ Key responsive features:
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature-name`
-3. Commit changes: `git commit -am 'Add feature'`
-4. Push to branch: `git push origin feature-name`
-5. Submit pull request
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repository  
+2. Create a new branch: `git checkout -b feature-name`  
+3. Make your changes and commit: `git commit -m 'Add new feature'`  
+4. Push to your branch: `git push origin feature-name`  
+5. Open a Pull Request
 
 ## 📄 License
 

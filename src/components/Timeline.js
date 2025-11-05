@@ -16,14 +16,13 @@ export const Timeline = () => {
       title: "Android Developer",
       company: "Milespeak Technologies Pvt. Ltd., Chennai",
       descriptions: [
-        "• Built and maintained Android apps using Kotlin and Java.",
-        "• Used MVVM and Room Database for clean and efficient data handling.",
-        "• Added Firebase (Auth, FCM, Analytics, Crashlytics) for secure logins and tracking.",
-        "• Designed simple, modern UIs with XML, Jetpack Compose and Material Design.",
-        "• Developed location-based features using Ola Maps SDK.",
-        "• Implemented additional integrations including PayU for payments and OCR for document scanning.",
-        "• Ensured application reliability through testing with JUnit, Espresso, and AndroidX Test.",
-        "• Improved performance, reduced crashes, and ensured smooth app experience on all Android versions.",
+        `Developed and managed Android apps using <strong>Kotlin</strong> and <strong>Java</strong>.`,
+        `Designed modern UIs with <strong>XML</strong>, <strong>Jetpack Compose</strong> and <strong>Material Design</strong>.`,
+        `Built scalable <strong>MVVM</strong> architectures with <strong>Room Database</strong> for efficient data handling.`,
+        `Integrated <strong>RESTful APIs</strong> for secure and seamless backend communication.`,
+        `Added <strong>Firebase</strong> features like authentication, analytics, crashlytics, push notifications, and social logins.`,
+        `Implemented location features with <strong>Ola Maps SDK</strong>, along with <strong>PayU</strong> for payments and <strong>OCR</strong> for document scanning.`,
+        `Improved app performance and compatibility across Android versions, reducing crash rates and improving stability.`,
       ],
       icon: icBriefcase,
       tech: [
@@ -34,7 +33,6 @@ export const Timeline = () => {
         "MVVM",
         "Retrofit",
         "Room",
-        "Kotlin Coroutines",
         "Firebase",
         "JUnit",
         "Espresso",
@@ -45,11 +43,24 @@ export const Timeline = () => {
       title: "Java Full Stack Web Development",
       company: "Qspiders, Chennai",
       descriptions: [
-        "• Learned full-stack web development using Java, Spring Boot, and REST APIs.",
-        "• Created responsive web pages with HTML, CSS, JavaScript.",
-        "• Designed and managed MySQL databases for better data handling.",
-        "• Worked on complete projects using CRUD operations and MVC pattern.",
-        "• Deployed apps with Apache Tomcat and used Git/GitHub for version control.",
+        `Learned full-stack web development using <strong>Java</strong>.`,
+        `Created responsive web pages with <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong>.`,
+        `Designed and managed <strong>SQL</strong> databases for better data handling.`,
+        `Worked on projects using CRUD operations and the MVC pattern.`,
+        `Deployed apps with <strong>Apache Tomcat</strong> and used <strong>GitHub</strong> for version control.`,
+      ],
+      tech: [
+        "Java",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SQL",
+        "JSP",
+        "Servlets",
+        "Apache Tomcat",
+        "Maven",
+        "Git",
+        "GitHub",
       ],
       icon: icCourse,
     },
@@ -58,10 +69,10 @@ export const Timeline = () => {
       title: "B.E Mechanical Engineering",
       company: "PSNACET, Dindigul",
       descriptions: [
-        "• Completed Bachelor's in Mechanical Engineering, building analytical and problem-solving skills.",
-        "• Worked on academic projects and practical assignments to apply engineering concepts.",
-        "• Attended workshops and technical sessions to improve knowledge and skills.",
-        "• Completed mini and main projects, gaining hands-on experience in design, analysis, and project execution.",
+        `Completed Bachelor's in <strong>Mechanical Engineering</strong>, building analytical and problem-solving skills.`,
+        `Worked on academic projects and assignments to apply engineering concepts.`,
+        `Attended workshops and technical sessions to improve knowledge and skills.`,
+        `Completed mini and main projects, gaining hands-on experience in design, analysis, and project execution.`,
       ],
       icon: icCollege,
     },
@@ -78,7 +89,7 @@ export const Timeline = () => {
           <div key={index} className="timeline-item" data-aos="fade-up">
             <div className="timeline-card">
               <div className="timeline-icon">
-                <img src={item.icon} alt="Briefcase" />
+                <img src={item.icon} alt="icon" />
               </div>
 
               <h3 className="timeline-title">{item.title}</h3>
@@ -91,18 +102,22 @@ export const Timeline = () => {
               <div className="timeline-divider"></div>
 
               {item.descriptions.map((desc, i) => (
-                <p key={i} className="timeline-description">
-                  {desc}
-                </p>
+                <p
+                  key={i}
+                  className="timeline-description"
+                  dangerouslySetInnerHTML={{ __html: desc }}
+                />
               ))}
 
-              <div className="tech-tags">
-                {item.tech?.map((tag, index) => (
-                  <span key={index} className="tech-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              {item.tech && (
+                <div className="tech-tags">
+                  {item.tech.map((tag, i) => (
+                    <span key={i} className="tech-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ))}
